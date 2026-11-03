@@ -1,0 +1,6 @@
+{
+  "name": "Joseon & Huaxia Glass - Cátedra Magistral Coreano & Chino",
+  "description": "Sistema de aprendizaje cristalino translúcido con cátedra doctoral trilingüe (Coreano, Chino, Español de México), desglose anatómico por colores, 16 ejemplos atómicos, 20 ejercicios y salón oficial HSK 1.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

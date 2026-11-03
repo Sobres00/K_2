@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-korean: 'Noto Sans KR', sans-serif;
+  --font-handwriting: 'Gaegu', cursive;
+}
+
+/* Glassmorphism & Cyber-Joseon Neon Glow System */
+:root {
+  --neon-cyan: #00f0ff;
+  --neon-pink: #ff2a8d;
+  --neon-purple: #9d4edd;
+  --glass-surface: rgba(14, 11, 26, 0.72);
+  --glass-border: rgba(157, 78, 221, 0.28);
+}
+
+/* Chamfered Cyber-Joseon Glass Card */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(20, 16, 38, 0.78) 0%, rgba(10, 8, 22, 0.88) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-cyan {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.07) 0%, rgba(10, 20, 35, 0.82) 100%);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 0 25px -5px rgba(0, 240, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.glass-panel-magenta {
+  background: linear-gradient(135deg, rgba(255, 42, 141, 0.08) 0%, rgba(30, 10, 28, 0.82) 100%);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 42, 141, 0.35);
+  box-shadow: 0 0 25px -5px rgba(255, 42, 141, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.neon-border-dual {
+  position: relative;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(16, 12, 34, 0.85), rgba(7, 5, 18, 0.92));
+}
+
+.neon-border-dual::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #00f0ff 0%, #ff2a8d 50%, #9d4edd 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 8px rgba(255, 42, 141, 0.4));
+}
+
+/* Sci-Fi Joseon Chamfered Polygon Borders */
+.chamfered-card {
+  clip-path: polygon(
+    14px 0%, calc(100% - 14px) 0%, 
+    100% 14px, 100% calc(100% - 14px), 
+    calc(100% - 14px) 100%, 14px 100%, 
+    0% calc(100% - 14px), 0% 14px
+  );
+}
+
+/* Floating animation */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(1.5deg);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentle-float 5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 16px rgba(255, 42, 141, 0.6));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar for sleek dark mode */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 8, 22, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(157, 78, 221, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.5);
+}
